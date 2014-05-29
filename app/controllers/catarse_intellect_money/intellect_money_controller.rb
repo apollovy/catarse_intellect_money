@@ -12,13 +12,14 @@ module CatarseIntellectMoney
         'projects.contributions.edit.intellectmoney_title',
         project_name: @contribution.project.name,
       )
+      @currency = CatarseSettings[:intellectmoney_currency] || 'TST'
       @hash = Digest::MD5.hexdigest(
         [
           CatarseSettings[:intellectmoney_eshopid],
           @contribution.id,
           @title,
           @contribution.value,
-          'TST',
+          @currency,
           CatarseSettings[:intellectmoney_secret],
         ].join('::')
       )
