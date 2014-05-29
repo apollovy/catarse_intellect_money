@@ -9,6 +9,6 @@ h3= t('projects.contributions.review.intellect_money.section_title')
       input type="hidden" name="orderId" value="#{@contribution.id}"
       input type="hidden" name="serviceName" value="#{@title}"
       input type="hidden" name="recipientAmount" value="#{@contribution.value}"
-      input type="hidden" name="recipientCurrency" value="TST"
+      input type="hidden" name="recipientCurrency" value="CatarseSettings[:intellectmoney_currency] || TST"
       input type="hidden" name="hash" value="#{@hash}"
       = submit_tag t('projects.contributions.review.intellect_money.button'), :class => 'btn btn-primary btn-large'
